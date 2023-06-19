@@ -100,9 +100,6 @@
   background: var(--gc);
 }
 
-.wrap {
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -140,9 +137,6 @@
 
 .header.on h1 img:last-child {
   filter: invert();
-}
-
-.gnb {
 }
 
 .gnb .main_menu {
@@ -350,26 +344,52 @@
 }
 
 .main_visual .btn_cicle {
-  position: absolute;
-  bottom: -100rem;
-  right: 300rem;
-  z-index: 999;
-
+  display: flex;
   width: 200rem;
   height: 200rem;
+  background-color: var(--mc);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18rem;
+  line-height: 23rem;
+  color: var(--gc);
+  z-index: 888;
+  transition: all 0.5s;
+
+  position: absolute;
+  bottom: 0;
+  right: 220rem;
+  transform: translate(0, 50%);
 }
 
-.main_visual .btn_cicle:hover::after {
-  content: "";
-  width: 250rem;
-  height: 250rem;
+.main_visual .btn_cicle span {
+  position: relative;
+}
 
+.main_visual .btn_cicle span::before {
+  content: "";
+  display: block;
+  background: url(../img/icon_apply.svg) no-repeat center center/cover;
+  width: 26rem;
+  height: 30rem;
+  position: relative;
+  top: -10rem;
+  left: 20rem;
+}
+
+.main_visual .btn_cicle:hover:after {
+  content: "";
+  width: 260rem;
+  height: 260rem;
+  background: var(--mc);
   border-radius: 50%;
-  background: rgba(10, 132, 126, 0.8);
-  display: inline-block;
+  opacity: 0.5;
   position: absolute;
-  top: -25rem;
-  left: -25rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   animation: dot 1.5s infinite;
 }
@@ -378,37 +398,15 @@
   0% {
     opacity: 0.5;
   }
-  100% {
-  }
-}
 
-.main_visual .btn_cicle .case {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 200rem;
-  height: 200rem;
-  background: var(--mc);
-  color: var(--wc);
-  font-size: 20rem;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 26rem;
+  100% {
+    opacity: 0.01;
+  }
 }
 
 /* .main_visual .btn_cicle:hover .case {
   animation: flipInY 1s infinite;
 } */
-
-.main_visual .btn_cicle .case::before {
-  content: "";
-  display: block;
-  width: 26rem;
-  height: 30rem;
-  background: url(../img/icon_apply.svg) no-repeat center center/cover;
-  margin: 0 0 20rem 0;
-}
 
 .main_visual .scroll {
   display: inline-block;
@@ -474,9 +472,6 @@
 }
 
 /* //여기까지 main_visual */
-
-.main_content {
-}
 
 .main_content .content {
   display: grid;
@@ -576,9 +571,7 @@
   top: 10rem;
 }
 
-/* .main_notice {
-    padding: 0 0 100rem 0;
-} */
+/*  //여기까지 main_content */
 
 .main_notice .content {
   opacity: 0;
@@ -658,6 +651,8 @@
   margin: 10rem 0;
 }
 
+/*  //여기까지 main_notice */
+
 .main_banner .content {
   position: relative;
   z-index: 999;
@@ -726,7 +721,7 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-/*  */
+/*  //여기까지 main_banner */
 
 .footer .top {
   position: relative;
@@ -891,4 +886,70 @@
 .footer .bottom .copyright {
   font-size: 12rem;
   color: var(--lc);
+}
+
+.footer .bottom .inner {
+  position: relative;
+}
+
+.footer .bottom .img_box img {
+  width: 110rem;
+}
+
+.footer .bottom .img_box {
+  position: absolute;
+  bottom: -10rem;
+  right: 220rem;
+}
+
+.footer .btn_cicle_org {
+  display: flex;
+  width: 180rem;
+  height: 180rem;
+  background-color: #b4613d;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18rem;
+  line-height: 23rem;
+  color: var(--gc);
+  z-index: 888;
+
+  font-weight: 400;
+
+  position: absolute;
+  bottom: -20rem;
+  right: 0;
+}
+
+.footer .btn_cicle_org:hover::after {
+  content: "";
+  width: 230rem;
+  height: 230rem;
+  background: #b4613d;
+  border-radius: 50%;
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation: dot 1.5s infinite;
+}
+
+.footer .btn_cicle_org span {
+  position: relative;
+}
+
+.footer .btn_cicle_org span::before {
+  content: "";
+  display: block;
+  background: url(../img/icon_map.svg) no-repeat center center/cover;
+  width: 26rem;
+  height: 30rem;
+
+  position: relative;
+  top: -10rem;
+  left: 30rem;
 }
